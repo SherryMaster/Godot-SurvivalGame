@@ -1,5 +1,6 @@
-[gd_scene load_steps=130 format=3 uid="uid://dfbrkow4dfwos"]
+[gd_scene load_steps=132 format=3 uid="uid://dfbrkow4dfwos"]
 
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_3nkp3"]
 [ext_resource type="Texture2D" uid="uid://mnhoe4pwfuo0" path="res://Assets/survivalgame-player-green.png" id="1_nl83d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_okm6j"]
@@ -1078,8 +1079,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_6b7ba"]
+radius = 5.0
 
-[node name="Sprites" type="AnimatedSprite2D" parent="."]
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3nkp3")
+
+[node name="SpritesAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4u6he")
-animation = &"bow_attack-n"
+animation = &"idle-s"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_6b7ba")

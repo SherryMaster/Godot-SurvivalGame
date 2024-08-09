@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://bohcvq2ubi0w1"]
+
+[ext_resource type="Script" path="res://Resources/Inventory/inv_ui.gd" id="1_43jcc"]
+[ext_resource type="Texture2D" uid="uid://bjum6ivyykks4" path="res://Assets/inventory-background.png" id="1_kacy5"]
+[ext_resource type="PackedScene" uid="uid://rhf5or224w7c" path="res://Resources/Inventory/inv_slot.tscn" id="2_7kre8"]
+
+[node name="Inv_UI" type="NinePatchRect"]
+offset_right = 158.0
+offset_bottom = 116.0
+texture = ExtResource("1_kacy5")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+script = ExtResource("1_43jcc")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -28.0
+offset_right = 38.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="inv_slot1" parent="GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot2" parent="GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot3" parent="GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot4" parent="GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot5" parent="GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot6" parent="GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot7" parent="GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot8" parent="GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot9" parent="GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot10" parent="GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot11" parent="GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot12" parent="GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2

@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://cav2f7grw7wxv"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/apple_tree.gd" id="1_7xqwc"]
+[ext_resource type="Texture2D" uid="uid://cjoidk300fad4" path="res://Assets/survivalgame-appletree.png" id="1_yfpw4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4w4e"]
+atlas = ExtResource("1_yfpw4")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lihf2"]
+atlas = ExtResource("1_yfpw4")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_phov8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4w4e")
+}],
+"loop": true,
+"name": &"log",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lihf2")
+}],
+"loop": true,
+"name": &"main",
+"speed": 0.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mn2jk"]
+radius = 4.0
+height = 14.0
+
+[node name="AppleTree" type="RigidBody2D"]
+freeze = true
+script = ExtResource("1_7xqwc")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -11)
+sprite_frames = SubResource("SpriteFrames_phov8")
+animation = &"main"
+
+[node name="AppleSpawnPoints" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -11)
+
+[node name="P1" type="Marker2D" parent="AppleSpawnPoints"]
+position = Vector2(-6, -6)
+
+[node name="P2" type="Marker2D" parent="AppleSpawnPoints"]
+position = Vector2(0, 2)
+
+[node name="P3" type="Marker2D" parent="AppleSpawnPoints"]
+position = Vector2(8, -4)
+
+[node name="P4" type="Marker2D" parent="AppleSpawnPoints"]
+position = Vector2(4, -6)
+
+[node name="P5" type="Marker2D" parent="AppleSpawnPoints"]
+position = Vector2(0, -6)
+
+[node name="P6" type="Marker2D" parent="AppleSpawnPoints"]
+position = Vector2(-2, -2)
+
+[node name="P7" type="Marker2D" parent="AppleSpawnPoints"]
+position = Vector2(-7, 2)
+
+[node name="P8" type="Marker2D" parent="AppleSpawnPoints"]
+position = Vector2(-8, -3)
+
+[node name="P9" type="Marker2D" parent="AppleSpawnPoints"]
+position = Vector2(6, -1)
+
+[node name="P10" type="Marker2D" parent="AppleSpawnPoints"]
+position = Vector2(8, -9)
+
+[node name="P11" type="Marker2D" parent="AppleSpawnPoints"]
+position = Vector2(3, -10)
+
+[node name="P12" type="Marker2D" parent="AppleSpawnPoints"]
+position = Vector2(-2, -10)
+
+[node name="P13" type="Marker2D" parent="AppleSpawnPoints"]
+position = Vector2(-7, -9)
+
+[node name="AppleRespawnTimer" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_mn2jk")
+
+[connection signal="timeout" from="AppleRespawnTimer" to="." method="_on_apple_respawn_timer_timeout"]

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cav2f7grw7wxv" path="res://Scenes/Objects/apple_tree.tscn" id="3_ky1x5"]
 [ext_resource type="PackedScene" uid="uid://bwvh64nebal18" path="res://Scenes/Objects/apple.tscn" id="5_p78bn"]
 [ext_resource type="PackedScene" uid="uid://j3ymfqe12p26" path="res://Scenes/Objects/coin.tscn" id="6_xrnfj"]
-[ext_resource type="PackedScene" uid="uid://bohcvq2ubi0w1" path="res://Resources/Inventory/inv_ui.tscn" id="7_17bu2"]
+[ext_resource type="PackedScene" uid="uid://bohcvq2ubi0w1" path="res://Resources/Inventory/inventory.tscn" id="7_17bu2"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -86,11 +86,11 @@ position = Vector2(-116, 145)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Inv_UI" parent="CanvasLayer" instance=ExtResource("7_17bu2")]
-offset_left = 456.0
-offset_top = 28.0
-offset_right = 614.0
-offset_bottom = 144.0
-scale = Vector2(1.55, 1.55)
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("7_17bu2")]
+offset_left = 416.0
+offset_top = 19.0
+offset_right = -632.0
+offset_bottom = -551.0
+scale = Vector2(3.055, 3.055)
 
 [connection signal="pickup" from="Player" to="." method="_on_player_pickup"]

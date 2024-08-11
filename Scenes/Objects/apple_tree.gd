@@ -6,7 +6,7 @@ extends Node2D
 @export var max_apples = 3
 
 @export_category("Apple Settings")
-@export var APPLE_SCENE: PackedScene = preload("res://Scenes/Objects/apple.tscn")
+@export var APPLE_SCENE: PackedScene = preload("res://Scenes/Objects/InvItems/apple.tscn")
 
 var apples := 0
 

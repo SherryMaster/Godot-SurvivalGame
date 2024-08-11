@@ -1,10 +1,8 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://vfi8q8ritqms"]
+[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://vfi8q8ritqms"]
 
-[ext_resource type="Script" path="res://Resources/Inventory/inventory_item.gd" id="1_mjf01"]
-[ext_resource type="Texture2D" uid="uid://cduma63lxv2gs" path="res://Assets/apple-icon.png" id="2_tdtqt"]
+[ext_resource type="Script" path="res://Resources/Inventory/InvComponents/inventory_item.gd" id="1_uaipn"]
 
 [resource]
-script = ExtResource("1_mjf01")
+script = ExtResource("1_uaipn")
 name = "Apple"
-texture = ExtResource("2_tdtqt")
 amount = 1

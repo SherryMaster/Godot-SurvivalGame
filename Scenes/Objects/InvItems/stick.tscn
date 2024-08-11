@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcbn81qgqykua"]
+
+[ext_resource type="Script" path="res://Scripts/PickAble.gd" id="1_ghw45"]
+[ext_resource type="Texture2D" uid="uid://bupu1doyuhdyx" path="res://Assets/stick-icon.png" id="2_kdl5t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ht7k"]
+radius = 4.0
+
+[node name="Stick" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 0
+freeze = true
+script = ExtResource("1_ghw45")
+item_name = "Stick"
+texture = ExtResource("2_kdl5t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kdl5t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_2ht7k")

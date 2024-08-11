@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcuxe6b7ig2qg"]
+[gd_scene load_steps=9 format=3 uid="uid://dcuxe6b7ig2qg"]
 
 [ext_resource type="TileSet" uid="uid://cadfm6fa687yh" path="res://Resources/Tilemaps/MainTileMap.tres" id="1_dltje"]
 [ext_resource type="Script" path="res://Scenes/Worlds/world.gd" id="1_kceqv"]
 [ext_resource type="PackedScene" uid="uid://dfbrkow4dfwos" path="res://Scenes/player.tscn" id="2_xceeo"]
 [ext_resource type="PackedScene" uid="uid://cav2f7grw7wxv" path="res://Scenes/Objects/apple_tree.tscn" id="3_ky1x5"]
-[ext_resource type="PackedScene" uid="uid://bwvh64nebal18" path="res://Scenes/Objects/apple.tscn" id="5_p78bn"]
+[ext_resource type="PackedScene" uid="uid://bwvh64nebal18" path="res://Scenes/Objects/InvItems/apple.tscn" id="5_p78bn"]
 [ext_resource type="PackedScene" uid="uid://j3ymfqe12p26" path="res://Scenes/Objects/coin.tscn" id="6_xrnfj"]
-[ext_resource type="PackedScene" uid="uid://bohcvq2ubi0w1" path="res://Resources/Inventory/inv_ui.tscn" id="7_17bu2"]
+[ext_resource type="PackedScene" uid="uid://bohcvq2ubi0w1" path="res://Resources/Inventory/InvComponents/inv_ui.tscn" id="7_17bu2"]
+[ext_resource type="PackedScene" uid="uid://bcbn81qgqykua" path="res://Scenes/Objects/InvItems/stick.tscn" id="8_da231"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -84,13 +85,32 @@ position = Vector2(-21, 111)
 [node name="Coin5" parent="." instance=ExtResource("6_xrnfj")]
 position = Vector2(-116, 145)
 
+[node name="Stick" parent="." instance=ExtResource("8_da231")]
+position = Vector2(124, 143)
+
+[node name="Stick2" parent="." instance=ExtResource("8_da231")]
+position = Vector2(53, 100)
+
+[node name="Stick3" parent="." instance=ExtResource("8_da231")]
+position = Vector2(103, 95)
+
+[node name="Stick4" parent="." instance=ExtResource("8_da231")]
+position = Vector2(69, 132)
+
+[node name="Stick5" parent="." instance=ExtResource("8_da231")]
+position = Vector2(13, 90)
+
+[node name="Stick6" parent="." instance=ExtResource("8_da231")]
+position = Vector2(-50, 170)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Inv_UI" parent="CanvasLayer" instance=ExtResource("7_17bu2")]
+visible = false
 offset_left = 456.0
 offset_top = 28.0
-offset_right = 614.0
-offset_bottom = 144.0
+offset_right = 605.0
+offset_bottom = 169.0
 scale = Vector2(1.55, 1.55)
 
 [connection signal="pickup" from="Player" to="." method="_on_player_pickup"]

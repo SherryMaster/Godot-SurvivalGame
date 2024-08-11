@@ -1,10 +1,13 @@
 class_name PickAble
 extends Node2D
 
-@export_enum("Fruit", "Currency") var item_type = "Fruit"
+@export_enum("Material", "Currency") var item_type = "Material"
 @export var item_name = "Apple"
 @export var value: int = 1
 @export var pickable_instantly = false
+@export var texture: Texture2D = preload("res://Assets/apple-icon.png")
+
+@export var added_to_inventory: bool = true
 
 var item_index = -1
 

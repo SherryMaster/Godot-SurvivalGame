@@ -75,6 +75,8 @@ script = ExtResource("1_1wclr")
 item_type = "Currency"
 item_name = "Coin"
 pickable_instantly = true
+texture = ExtResource("1_gvosa")
+added_to_inventory = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.1, 0.1)

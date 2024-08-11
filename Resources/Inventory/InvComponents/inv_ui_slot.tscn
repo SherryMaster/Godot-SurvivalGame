@@ -1,13 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://rhf5or224w7c"]
+[gd_scene load_steps=3 format=3 uid="uid://rhf5or224w7c"]
 
-[ext_resource type="Texture2D" uid="uid://d3skm04f6c5p1" path="res://Assets/inventory-slot.png" id="1_apytx"]
-[ext_resource type="Script" path="res://Resources/Inventory/inv_slot.gd" id="1_nflob"]
-[ext_resource type="Texture2D" uid="uid://cduma63lxv2gs" path="res://Assets/apple-icon.png" id="3_0ux54"]
+[ext_resource type="Script" path="res://Resources/Inventory/InvComponents/inv_ui_slot.gd" id="1_0v3jw"]
+[ext_resource type="Texture2D" uid="uid://d3skm04f6c5p1" path="res://Assets/inventory-slot.png" id="2_3w8s2"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_3ltmy"]
-font_size = 9
-
-[node name="inv_slot" type="Panel"]
+[node name="InvUiSlot" type="Panel"]
 custom_minimum_size = Vector2(32, 32)
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,7 +12,7 @@ offset_right = -1120.0
 offset_bottom = -616.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nflob")
+script = ExtResource("1_0v3jw")
 
 [node name="Sprite2D" type="TextureRect" parent="."]
 layout_mode = 1
@@ -25,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_apytx")
+texture = ExtResource("2_3w8s2")
 expand_mode = 1
 
 [node name="item_texture" type="TextureRect" parent="."]
@@ -39,7 +35,6 @@ offset_right = -3.0
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_0ux54")
 expand_mode = 1
 
 [node name="Amount" type="Label" parent="."]
@@ -49,10 +44,11 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -17.0
-offset_top = -13.0
-offset_right = -1.0
+offset_left = -16.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 11.0
 grow_horizontal = 0
 grow_vertical = 0
-label_settings = SubResource("LabelSettings_3ltmy")
+scale = Vector2(0.51, 0.51)
 horizontal_alignment = 2

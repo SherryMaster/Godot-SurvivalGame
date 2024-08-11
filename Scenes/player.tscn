@@ -1,7 +1,8 @@
-[gd_scene load_steps=133 format=3 uid="uid://dfbrkow4dfwos"]
+[gd_scene load_steps=134 format=3 uid="uid://dfbrkow4dfwos"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_3nkp3"]
 [ext_resource type="Texture2D" uid="uid://mnhoe4pwfuo0" path="res://Assets/survivalgame-player-green.png" id="1_nl83d"]
+[ext_resource type="Texture2D" uid="uid://b4ghqa5ncuyhj" path="res://Assets/plus.png" id="3_72vh2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_okm6j"]
 atlas = ExtResource("1_nl83d")
@@ -1092,7 +1093,7 @@ script = ExtResource("1_3nkp3")
 [node name="SpritesAnimation" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_4u6he")
-animation = &"idle-s"
+animation = &"bow_attack-e"
 autoplay = "idle-s"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -1103,3 +1104,14 @@ collision_mask = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 shape = SubResource("CircleShape2D_0ojig")
+
+[node name="AimIcon" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.1875, 0.1875)
+texture = ExtResource("3_72vh2")
+
+[node name="ShootingCooldown" type="Timer" parent="."]
+
+[node name="Projectiles" type="Node2D" parent="."]
+
+[connection signal="timeout" from="ShootingCooldown" to="." method="_on_shooting_cooldown_timeout"]

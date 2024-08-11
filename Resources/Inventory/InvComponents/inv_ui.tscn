@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://bohcvq2ubi0w1"]
+
+[ext_resource type="Script" path="res://Resources/Inventory/InvComponents/inv_ui.gd" id="1_43jcc"]
+[ext_resource type="Texture2D" uid="uid://bjum6ivyykks4" path="res://Assets/inventory-background.png" id="1_kacy5"]
+[ext_resource type="PackedScene" uid="uid://rhf5or224w7c" path="res://Resources/Inventory/InvComponents/inv_ui_slot.tscn" id="2_7kre8"]
+[ext_resource type="Texture2D" uid="uid://b7o0mxyd8njlc" path="res://Assets/Coin/coin64.png" id="3_4pygu"]
+
+[node name="Inv_UI" type="NinePatchRect"]
+offset_right = 148.0
+offset_bottom = 141.0
+texture = ExtResource("1_kacy5")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+script = ExtResource("1_43jcc")
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBC" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+
+[node name="HBC" type="HBoxContainer" parent="MC/VBC"]
+layout_mode = 2
+
+[node name="CoinImg" type="TextureRect" parent="MC/VBC/HBC"]
+custom_minimum_size = Vector2(23, 23)
+layout_mode = 2
+texture = ExtResource("3_4pygu")
+expand_mode = 1
+
+[node name="CoinsAmount" type="Label" parent="MC/VBC/HBC"]
+layout_mode = 2
+text = "0"
+
+[node name="GridContainer" type="GridContainer" parent="MC/VBC"]
+layout_mode = 2
+columns = 4
+
+[node name="inv_slot1" parent="MC/VBC/GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot2" parent="MC/VBC/GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot3" parent="MC/VBC/GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot4" parent="MC/VBC/GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot5" parent="MC/VBC/GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot6" parent="MC/VBC/GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot7" parent="MC/VBC/GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot8" parent="MC/VBC/GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot9" parent="MC/VBC/GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot10" parent="MC/VBC/GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot11" parent="MC/VBC/GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
+
+[node name="inv_slot12" parent="MC/VBC/GridContainer" instance=ExtResource("2_7kre8")]
+layout_mode = 2
